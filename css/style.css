@@ -1,0 +1,323 @@
+/* General Body & Container */
+body {
+    font-family: 'Poppins', sans-serif; /* Sử dụng font hiện đại */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8faff;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header/Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 75, 170, 0.7), rgba(0, 75, 170, 0.7)), url('/bg/mavui.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Chiều cao tối thiểu */
+    position: relative;
+    overflow: hidden; /* Che đi phần ảnh bị tràn */
+}
+
+/* Hiệu ứng gợn sóng (sóng) cho Hero Section */
+.hero::before {
+    content: '';
+    position: absolute;
+    bottom: -50px; /* Điều chỉnh để sóng bắt đầu từ dưới */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="height: 120px; width: 100%;"><path d="M0,0 C300,80 800,-80 1200,0 L1200,120 L0,120 Z" style="fill: %23f8faff;"></path></svg>') no-repeat center bottom;
+    background-size: cover;
+    z-index: 1; /* Đảm bảo sóng nằm trên nền */
+}
+
+
+.hero-content {
+    z-index: 2; /* Đảm bảo nội dung nằm trên sóng */
+}
+
+.hero-content h1 {
+    font-size: 3.8em; /* To hơn */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.4em; /* Lớn hơn */
+    margin-bottom: 40px;
+    max-width: 600px;
+    opacity: 0.9;
+}
+
+.button {
+    display: inline-block;
+    background-color: #ff6f61; /* Màu nổi bật */
+    color: white;
+    padding: 15px 35px; /* Lớn hơn */
+    text-decoration: none;
+    border-radius: 50px; /* Bo tròn hoàn toàn */
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+    background-color: #e65c50; /* Màu đậm hơn khi hover */
+    transform: translateY(-3px); /* Hiệu ứng nhấc nhẹ */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Sections */
+.section {
+    padding: 80px 0; /* Khoảng cách lớn hơn */
+    text-align: center;
+    position: relative;
+}
+
+.section:nth-of-type(odd) {
+    background-color: #ffffff; /* Nền trắng */
+}
+
+.section:nth-of-type(even) {
+    background-color: #eef2f7; /* Nền xám xanh nhạt */
+}
+
+.section h2 {
+    font-size: 3em; /* Tiêu đề lớn và nổi bật */
+    margin-bottom: 40px;
+    color: #004baa; /* Màu xanh đậm */
+    position: relative;
+    display: inline-block; /* Để dùng pseudo-element cho gạch chân */
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #ff6f61; /* Màu gạch chân */
+    border-radius: 2px;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Contact Form */
+.contact-section {
+    background-color: #ffffff;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Rộng hơn */
+    margin: 30px auto;
+    text-align: left;
+    border: 1px solid #e0e0e0; /* Viền nhẹ */
+}
+
+.form-group {
+    margin-bottom: 25px; /* Khoảng cách lớn hơn giữa các nhóm input */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 1.05em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #cdd4e0;
+    border-radius: 15px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #007bff; /* Viền xanh khi focus */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Hiệu ứng bóng */
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px; /* Chiều cao tối thiểu */
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff; /* Màu xanh nổi bật */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em; /* Lớn hơn */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+.form-status {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.form-status.success {
+    color: #28a745; /* Xanh lá cây */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.form-status.error {
+    color: #dc3545; /* Đỏ */
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50; /* Màu tối đậm */
+    color: #FFFFFF;
+    text-align: center;
+    padding: 25px;
+    margin-top: 60px;
+    font-size: 0.95em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+        min-height: 50vh;
+    }
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content p {
+        font-size: 1.1em;
+    }
+    .section {
+        padding: 50px 0;
+    }
+    .section h2 {
+        font-size: 2.2em;
+    }
+    .contact-form {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .button {
+        padding: 10px 25px;
+        font-size: 0.9em;
+    }
+    .section h2 {
+        font-size: 1.8em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .contact-form button {
+        font-size: 0.9em;
+    }
+}
+
+
+/* Thêm vào cuối file style.css của bạn */
+
+.social-links {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* Để các icon và chữ căn chỉnh tốt hơn nếu bạn muốn chúng nằm trên cùng một dòng */
+    display: flex; /* Dùng flexbox để căn chỉnh dễ dàng */
+    justify-content: center; /* Căn giữa các liên kết */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 20px; /* Tạo khoảng cách giữa các liên kết */
+}
+
+.social-links a {
+    color: var(--white-text);
+    text-decoration: none;
+    font-size: 1.2em;
+    /* margin: 0 10px; <--- Có thể bỏ nếu dùng gap trên parent */
+    transition: color 0.3s ease;
+    
+    /* Căn chỉnh icon và văn bản */
+    display: inline-flex; /* Để icon và chữ nằm cạnh nhau */
+    align-items: center; /* Căn giữa icon và chữ theo chiều dọc */
+}
+
+.social-links a i {
+    margin-right: 8px; /* Khoảng cách giữa icon và văn bản */
+    font-size: 1.5em; /* Kích thước icon lớn hơn một chút so với văn bản */
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+#background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+}
