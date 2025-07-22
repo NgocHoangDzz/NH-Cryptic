@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enigmatic About & Contact Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NgocHoangDzz/GeyKey/Contact02.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NgocHoangDzz/Files/Contact_v01.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -28,7 +28,7 @@
                     <i class="fas fa-external-link-alt"></i> Tải Minecraft(patch)1.21.92.1
                 </a>
                 <a href="https://discord.gg/YkRK3DRHN4" target="_blank" class="button external-link-button">
-                    <i class="fas fa-blog"></i> Đọc Blog của tôi
+                    <i class="fas fa-blog"></i> Tham gia discord
                 </a>
             </div>
         </div>
@@ -44,21 +44,29 @@
     <section id="contact" class="section contact-section">
         <div class="container">
             <h2>Liên hệ</h2>
-            <p>bạn cần hỗ trợ? Hãy gửi tin nhắn cho tôi!</p>
+            <p>bạn cần hỗ trợ? Hãy gửi email cho tôi!</p>
             
             <form action="https://getform.io/f/allzrmla" method="POST" class="contact-form">
                 <div class="form-group">
-                    <label for="name">Tên của bạn:</label>
+                    <label for="name">Họ và tên:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
+                
                 <div class="form-group">
-                    <label for="email">Email của bạn:</label>
+                    <label for="phone">SDT:</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
                     <input type="email" id="email" name="_replyto" required>
                 </div>
+                
                 <div class="form-group">
                     <label for="message">Tin nhắn:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
+                
                 <button type="submit" class="button">Gửi tin nhắn</button>
             </form>
             <p id="formStatus" class="form-status"></p>
