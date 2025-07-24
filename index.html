@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enigmatic About & Contact Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NgocHoangDzz/Files/Contact_v02.css">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/NgocHoangDzz/Avt@latest/HTG_Logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/NgocHoangDzz/Files/Contact_v03.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -35,25 +37,41 @@
 
     <header class="hero">
         <div class="hero-content">
+            <header data-aos="fade-down" data-aos-duration="2000">
+            <div class="left">
+                <img class="img" src="https://cdn.jsdelivr.net/gh/NgocHoangDzz/Avt@latest/HTG_Logo.png" alt="logo" style="
+                width: 100px; border-radius: 50%;">
+                <h2 style="color: blue; font-weight: 999; background: rgba(0, 0, 0, 0.2); border-radius: 20px;"><span class="Enigmatic">Enigmatic</span>Dev</h2>
+            </div>
             <h1>Chào mừng bạn đến với trang của Enigmatic!</h1>
             <p>Khám phá thêm về tôi.</p>
-            <a href="#about" class="button">Tìm hiểu thêm</a>
+            <a href="#dow" class="hero-button">Download file</a>
+            <a href="#about" class="hero-button">Tìm hiểu thêm</a>
+            <a href="#contact" class="hero-button">Liên Hệ</a>
         </div>
     </header>
-
-    <div class="main-action-buttons-container">
+    <section id="dow" class="section dow-section">
+        <div class="container">
+            <h2>Mục file</h2>
+            <p>bạn cần hỗ trợ? Hãy gửi email cho tôi!</p>
+            
+            <div class="main-action-buttons-container">
         <div class="container">
             <div class="action-buttons">
                 
                 <a href="https://www.mediafire.com/file/vwiexk2z0w7fxsg/Patch_12192_Arm64_32_Musc.apk/file" target="_blank" class="button external-link-button">
-                    <i class="fas fa-external-link-alt"></i> Tải Minecraft(patch)1.21.92.1
+                    <i class="fas fa-external-link-alt"></i> Minecraft(patch)1.21.92.1
                 </a>
                 <a href="https://discord.gg/YkRK3DRHN4" target="_blank" class="button external-link-button">
                     <i class="fas fa-blog"></i> Tham gia discord
                 </a>
+                </div>
             </div>
         </div>
     </div>
+    </section>
+    
+    
     <section id="about" class="section about-section">
         <div class="container">
             <h2>Về tôi</h2>
@@ -61,6 +79,7 @@
             <p>Mục tiêu của tôi là tạo ra những sản phẩm, trang web giải trí có thể giúp ích cho cuộc sống!</p>
             </div>
     </section>
+    
     
     <section id="contact" class="section contact-section">
         <div class="container">
@@ -107,8 +126,14 @@
             <p>&copy; 2025 by Enigmatic. All rights reserved.</p>
         </div>
     </footer>
+        
+    <audio id="click-sound" src="/click.mp3" preload="auto"></audio>
     
-    <script src="https://cdn.jsdelivr.net/gh/NgocHoangDzz/Files/Contact.script-v00.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/NgocHoangDzz/Files/Contact.script-v01.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/NgocHoangDzz/118/java/chatbot.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
