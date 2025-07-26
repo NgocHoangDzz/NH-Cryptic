@@ -1,12 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (Giữ nguyên phần cuộn mượt mà nếu có) ...
 
     const form = document.querySelector('.contact-form');
     const formStatus = document.getElementById('formStatus');
 
     if (form) {
         form.addEventListener('submit', async (event) => {
-            event.preventDefault(); // Ngăn chặn form gửi đi theo cách truyền thống
+            event.preventDefault();
 
             const formData = new FormData(form);
             try {
@@ -14,16 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     method: form.method,
                     body: formData,
                     headers: {
-                        'Accept': 'application/json' // Quan trọng để nhận phản hồi JSON
+                        'Accept': 'application/json'
                     }
                 });
 
                 if (response.ok) {
                     formStatus.textContent = 'Tin nhắn của bạn đã được gửi thành công!';
                     formStatus.className = 'form-status success';
-                    form.reset(); // Xóa nội dung form
+                    form.reset();
                 } else {
-                    const data = await response.json(); // Đọc lỗi từ phản hồi JSON
+                    const data = await response.json();
                     if (data.message) {
                         formStatus.textContent = 'Có lỗi xảy ra: ' + data.message;
                     } else {
@@ -39,25 +38,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-// Thêm đoạn mã này vào file script.js của bạn
-
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (Giữ nguyên các mã JavaScript hiện có của bạn, ví dụ xử lý form) ...
 
-    // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Ngăn chặn hành vi cuộn mặc định của trình duyệt
+            e.preventDefault();
 
-            const targetId = this.getAttribute('href'); // Lấy id của phần tử mục tiêu (ví dụ: #about)
-            const targetElement = document.querySelector(targetId); // Tìm phần tử đó trong DOM
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
                 targetElement.scrollIntoView({
-                    behavior: 'smooth' // Kích hoạt hiệu ứng cuộn mượt mà
+                    behavior: 'smooth'
                 });
             }
         });
     });
+});
+
+
+document.addEventListener('click', () => {
+    const clickAudio = document.getElementById('click-sound');
+        if (clickAudio) {
+            clickAudio.currentTime = 0;
+            clickAudio.play();
+    }
 });
